@@ -13,11 +13,8 @@ This is how I would do it.
 
 #Now I like that I get all the data, but we only need the names. 
 
-$ComputerNames = (Get-ADComputer -Filter *)
+$ComputerNames = (Get-ADComputer -Filter *).Names
 #This puts the entire command's output into the array $ComputerNames. We only need the names. This is how we do this. 
-
-$ComputerNames = $ComputerNames.name
-#This . (Dot) sourcing places just the names of devices in the array. 
 
 #Now we need to go through this list. With a loop. I like foreach for this. 
 
